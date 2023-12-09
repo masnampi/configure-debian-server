@@ -1,9 +1,23 @@
 # Configure Debian Server
 
-- 
+- connect to root gcp debian server
 ```
+sudo passwd
+sudo -s
 sudo apt update && sudo apt upgrade -y
+systemctl status sshd
+apt install vim
+vim ./etc/ssh/sshd_config
+  PermitRootLogin yes
+  PasswordAuthentication yes
+:wq
+service sshd restart
 
+login with terminal : ssh root@ip_addresss
+```
+
+
+```
 sudo dpkg-reconfigure tzdata
 
 sudo adduser anonymous
